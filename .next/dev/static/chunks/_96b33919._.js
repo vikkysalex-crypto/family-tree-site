@@ -485,7 +485,7 @@ function Hero() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                 className: "text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance",
-                                children: "Discover Your Family Story and Build Your Lineage"
+                                children: "Connect with Your Roots, Build an Ancestral Network"
                             }, void 0, false, {
                                 fileName: "[project]/components/hero.tsx",
                                 lineNumber: 10,
@@ -493,7 +493,7 @@ function Hero() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-lg text-foreground/60 text-balance",
-                                children: "Create a beautiful family history profile, upload precious memories, connect family members across generations, and preserve your legacy securely in one place."
+                                children: "Preserve your bloodline  - connect with verified family members form your lineage, preserve memories and historical legacy across generations, all in one place."
                             }, void 0, false, {
                                 fileName: "[project]/components/hero.tsx",
                                 lineNumber: 13,
@@ -511,12 +511,12 @@ function Hero() {
                                             children: "Get Started"
                                         }, void 0, false, {
                                             fileName: "[project]/components/hero.tsx",
-                                            lineNumber: 19,
+                                            lineNumber: 18,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero.tsx",
-                                        lineNumber: 18,
+                                        lineNumber: 17,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -528,18 +528,18 @@ function Hero() {
                                             children: "Learn More"
                                         }, void 0, false, {
                                             fileName: "[project]/components/hero.tsx",
-                                            lineNumber: 22,
+                                            lineNumber: 21,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/hero.tsx",
-                                        lineNumber: 21,
+                                        lineNumber: 20,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/hero.tsx",
-                                lineNumber: 17,
+                                lineNumber: 16,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -561,7 +561,7 @@ function Hero() {
                                     r: "40"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 29,
+                                    lineNumber: 28,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -570,7 +570,7 @@ function Hero() {
                                     r: "35"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 30,
+                                    lineNumber: 29,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -579,7 +579,7 @@ function Hero() {
                                     r: "35"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 31,
+                                    lineNumber: 30,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -588,7 +588,7 @@ function Hero() {
                                     r: "30"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 32,
+                                    lineNumber: 31,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -597,7 +597,7 @@ function Hero() {
                                     r: "30"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 33,
+                                    lineNumber: 32,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -606,7 +606,7 @@ function Hero() {
                                     r: "30"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 34,
+                                    lineNumber: 33,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -618,7 +618,7 @@ function Hero() {
                                     strokeWidth: "2"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 36,
+                                    lineNumber: 35,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -630,7 +630,7 @@ function Hero() {
                                     strokeWidth: "2"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 37,
+                                    lineNumber: 36,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -642,11 +642,23 @@ function Hero() {
                                     strokeWidth: "2"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 38,
+                                    lineNumber: 37,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
                                     x1: "120",
+                                    y1: "235",
+                                    x2: "200",
+                                    y2: "290",
+                                    stroke: "currentColor",
+                                    strokeWidth: "2"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/hero.tsx",
+                                    lineNumber: 38,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                                    x1: "280",
                                     y1: "235",
                                     x2: "200",
                                     y2: "290",
@@ -660,7 +672,7 @@ function Hero() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
                                     x1: "280",
                                     y1: "235",
-                                    x2: "200",
+                                    x2: "300",
                                     y2: "290",
                                     stroke: "currentColor",
                                     strokeWidth: "2"
@@ -668,28 +680,16 @@ function Hero() {
                                     fileName: "[project]/components/hero.tsx",
                                     lineNumber: 40,
                                     columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                                    x1: "280",
-                                    y1: "235",
-                                    x2: "300",
-                                    y2: "290",
-                                    stroke: "currentColor",
-                                    strokeWidth: "2"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 41,
-                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/hero.tsx",
-                            lineNumber: 28,
+                            lineNumber: 27,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/hero.tsx",
-                        lineNumber: 27,
+                        lineNumber: 26,
                         columnNumber: 11
                     }, this)
                 ]
@@ -732,13 +732,13 @@ const features = [
         icon: "✓"
     },
     {
-        title: "Upload Images",
-        description: "Store up to 3 images per profile to preserve your memories.",
+        title: "Verify Authenticity",
+        description: "Get verified with government issued ID in minutes.",
         icon: "📸"
     },
     {
         title: "Multi-Generation Support",
-        description: "Add parents, children, and grandparents to build complete family tree.",
+        description: "Get matched with your likely extended family members automatically.",
         icon: "👨‍👩‍👧‍👦"
     },
     {
@@ -777,7 +777,7 @@ function Features() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-lg text-foreground/60 max-w-2xl mx-auto",
-                            children: "Everything you need to create, manage, and preserve your family history in one secure platform."
+                            children: "Simple yet powerful tool to manage and build a strong family history."
                         }, void 0, false, {
                             fileName: "[project]/components/features.tsx",
                             lineNumber: 40,

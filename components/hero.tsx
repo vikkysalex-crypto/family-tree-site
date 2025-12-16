@@ -8,11 +8,10 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
-              Discover Your Family Story and Build Your Lineage
+             Connect with Your Roots, Build an Ancestral Network
             </h1>
             <p className="text-lg text-foreground/60 text-balance">
-              Create a beautiful family history profile, upload precious memories, connect family members across
-              generations, and preserve your legacy securely in one place.
+              Preserve your bloodline  - connect with verified family members form your lineage, preserve memories and historical legacy across generations, all in one place.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" asChild className="bg-primary hover:bg-primary/90">

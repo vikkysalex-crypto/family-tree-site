@@ -5,13 +5,13 @@ const features = [
     icon: "✓",
   },
   {
-    title: "Upload Images",
-    description: "Store up to 3 images per profile to preserve your memories.",
+    title: "Verify Authenticity",
+    description: "Get verified with government issued ID in minutes.",
     icon: "📸",
   },
   {
     title: "Multi-Generation Support",
-    description: "Add parents, children, and grandparents to build complete family tree.",
+    description: "Get matched with your likely extended family members automatically.",
     icon: "👨‍👩‍👧‍👦",
   },
   {
@@ -38,7 +38,7 @@ export default function Features() {
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Powerful Features for Your Family Story</h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            Everything you need to create, manage, and preserve your family history in one secure platform.
+            Simple yet powerful tool to manage and build a strong family history.
           </p>
         </div>
 
