@@ -1,172 +1,160 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { supabase } from "@/lib/supabase/client"
+import { useAuth } from "@/providers/auth-provider"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 
-interface FamilyMember {
-  id: string
-  name: string
-  relationship: string
-  generation: number
-}
+export default function AddFamilyMember() {
+  const { user } = useAuth()
+  const router = useRouter()
 
-export default function FamilyTreePage() {
-  const [members, setMembers] = useState<FamilyMember[]>([
-    {
-      id: "1",
-      name: "You",
-      relationship: "Self",
-      generation: 0,
-    },
-  ])
-  const [showModal, setShowModal] = useState(false)
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    otherName: "",
+    dob: "",
+    relationship: "",
+  })
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
+  const [loadingUser, setLoadingUser] = useState(true)
+
+  // Wait for user to load
+  useEffect(() => {
+    if (user) setLoadingUser(false)
+  }, [user])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError("")
+
+    if (!user) {
+      setError("Loading user info, please wait...")
+      return
+    }
+
+    const { firstName, lastName, relationship, otherName, dob } = form
+
+    if (!firstName || !lastName || !relationship) {
+      setError("Please fill in First Name, Last Name, and Relationship.")
+      return
+    }
+
+    setIsLoading(true)
+
+    const { error: dbError } = await supabase.from("family_members").insert([
+      {
+        user_id: user.id, // ✅ guaranteed to exist now
+        first_name: firstName,
+        last_name: lastName,
+        other_name: otherName || null,
+        dob: dob || null,
+        relationship,
+      },
+    ])
+
+    setIsLoading(false)
+
+    if (dbError) {
+      setError(dbError.message)
+      return
+    }
+
+    router.push("/dashboard/family-tree")
+  }
+
+  if (loadingUser) return <p className="p-6">Loading user information...</p>
 
   return (
-    <div className="p-4 lg:p-8">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-bold text-foreground mb-1">Family Tree</h1>
-          <p className="text-foreground/60">Visualize your family lineage up to 2 generations</p>
-        </div>
-        <Button onClick={() => setShowModal(true)} className="bg-primary hover:bg-primary/90 text-primary-foreground">
-          Add Family Member
-        </Button>
-      </div>
+    <div className="max-w-lg mx-auto p-8 bg-white rounded-xl shadow mt-12">
+      <h1 className="text-2xl font-bold text-center mb-6">Add Family Member</h1>
 
-      {/* Tree Visualization */}
-      <div className="bg-card border border-border rounded-lg p-8 mb-8">
-        <div className="flex flex-col items-center gap-8">
-          {/* Generation 0 - Self */}
-          <div className="text-center">
-            <div className="inline-block bg-gradient-to-br from-primary to-accent text-primary-foreground rounded-lg px-6 py-4 font-semibold">
-              You
-            </div>
-          </div>
-
-          {/* Connector Line */}
-          <div className="w-1 h-12 bg-border"></div>
-
-          {/* Generation 1 - Parents */}
-          <div className="w-full">
-            <div className="text-sm font-semibold text-foreground/60 mb-4 text-center">Parents</div>
-            <div className="flex justify-center gap-8 flex-wrap">
-              <div className="bg-accent/20 border border-accent/40 rounded-lg px-6 py-4 text-center min-w-48">
-                <div className="font-semibold text-foreground mb-1">Add Parent</div>
-                <p className="text-sm text-foreground/60">Click to add your parent</p>
-              </div>
-              <div className="bg-accent/20 border border-accent/40 rounded-lg px-6 py-4 text-center min-w-48">
-                <div className="font-semibold text-foreground mb-1">Add Parent</div>
-                <p className="text-sm text-foreground/60">Click to add your parent</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Connector Line */}
-          <div className="w-1 h-12 bg-border"></div>
-
-          {/* Generation 2 - Grandparents */}
-          <div className="w-full">
-            <div className="text-sm font-semibold text-foreground/60 mb-4 text-center">
-              Grandparents (Paternal & Maternal)
-            </div>
-            <div className="flex justify-center gap-4 flex-wrap">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="bg-accent/10 border border-accent/30 rounded-lg px-4 py-3 text-center min-w-40">
-                  <div className="text-xs font-semibold text-foreground/50">Add Grandparent</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <p className="text-sm text-blue-900">
-            Your family tree shows up to 2 generations above you. Add family members to build out your complete lineage.
-          </p>
-        </div>
-      </div>
-
-      {/* Members List */}
-      <div className="bg-card border border-border rounded-lg p-6">
-        <h2 className="text-xl font-bold text-foreground mb-4">Family Members ({members.length})</h2>
-        <div className="space-y-3">
-          {members.map((member) => (
-            <div
-              key={member.id}
-              className="flex items-center justify-between p-4 bg-background rounded-lg border border-border hover:border-primary/50 transition-colors"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold">
-                  {member.name.charAt(0)}
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">{member.name}</p>
-                  <p className="text-sm text-foreground/60">{member.relationship}</p>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <Button variant="outline" size="sm">
-                  Edit
-                </Button>
-                <Button variant="outline" size="sm" className="text-red-600 hover:text-red-700 bg-transparent">
-                  Remove
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Add Member Modal */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-card border border-border rounded-lg p-8 max-w-md w-full space-y-6">
-            <div>
-              <h2 className="text-2xl font-bold text-foreground">Add Family Member</h2>
-              <p className="text-sm text-foreground/60">Add a new person to your family tree</p>
-            </div>
-
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Full Name</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="Enter full name"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Relationship</label>
-                <select className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Select relationship...</option>
-                  <option>Parent</option>
-                  <option>Grandparent</option>
-                  <option>Sibling</option>
-                  <option>Aunt/Uncle</option>
-                  <option>Cousin</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Birth Date</label>
-                <input
-                  type="date"
-                  className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              <div className="flex gap-4 pt-4">
-                <Button onClick={() => setShowModal(false)} variant="outline" className="flex-1">
-                  Cancel
-                </Button>
-                <Button className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">Add Member</Button>
-              </div>
-            </form>
-          </div>
+      {error && (
+        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded mb-4">
+          {error}
         </div>
       )}
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-1">First Name</label>
+            <input
+              name="firstName"
+              value={form.firstName}
+              onChange={handleChange}
+              type="text"
+              placeholder="John"
+              className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium mb-1">Last Name</label>
+            <input
+              name="lastName"
+              value={form.lastName}
+              onChange={handleChange}
+              type="text"
+              placeholder="Doe"
+              className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+              required
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Other Name</label>
+          <input
+            name="otherName"
+            value={form.otherName}
+            onChange={handleChange}
+            type="text"
+            placeholder="Optional"
+            className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Date of Birth</label>
+          <input
+            name="dob"
+            value={form.dob}
+            onChange={handleChange}
+            type="date"
+            className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Relationship</label>
+          <select
+            name="relationship"
+            value={form.relationship}
+            onChange={handleChange}
+            className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+            required
+          >
+            <option value="">Select relationship</option>
+            <option value="father">Father</option>
+            <option value="mother">Mother</option>
+            <option value="grandparent">Grandparent</option>
+            <option value="child">Child</option>
+            <option value="sibling">Sibling</option>
+          </select>
+        </div>
+
+        <Button type="submit" className="w-full mt-2" disabled={isLoading}>
+          {isLoading ? "Adding..." : "Add Member"}
+        </Button>
+      </form>
     </div>
   )
 }

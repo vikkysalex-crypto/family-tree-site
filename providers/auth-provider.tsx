@@ -1,91 +1,63 @@
-"use client"
+"use client"   // ✅ Must be at the very top
 
-import type React from "react"
-import { createContext, useContext, useState, useEffect } from "react"
+import { createContext, useContext } from "react"
+import { supabase } from "@/lib/supabase/client"
 
-interface User {
-  id: string
-  email: string
-  name: string
-}
+export const AuthContext = createContext<any>({})
 
-interface AuthContextType {
-  user: User | null
-  loading: boolean
-  login: (email: string, password: string) => Promise<void>
-  register: (email: string, password: string, name: string) => Promise<void>
-  logout: () => void
-}
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  const register = async (
+    email: string,
+    password: string,
+    firstName: string,
+    lastName: string,
+    otherName?: string,
+    dob?: string,
+    nationality?: string,
+    phone?: string
+  ) => {
+    // 1️⃣ Sign up with Supabase Auth
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    })
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined)
+    if (error) throw error
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true)
+    const authId = data.user?.id
+    if (!authId) throw new Error("User ID not found after signup")
 
-  // Initialize auth state from localStorage on mount
-  useEffect(() => {
-    const storedUser = localStorage.getItem("familytree_user")
-    if (storedUser) {
-      try {
-        setUser(JSON.parse(storedUser))
-      } catch (error) {
-        console.error("Failed to parse stored user:", error)
-      }
-    }
-    setLoading(false)
-  }, [])
+    // 2️⃣ Insert into 'users' table
+    const { error: dbError } = await supabase.from("users").insert({
+      auth_id: authId,
+      first_name: firstName,
+      last_name: lastName,
+      other_name: otherName || null,
+      email,
+      phone: phone || null,
+      nationality: nationality || null,
+      dob: dob || null,
+    })
+
+    if (dbError) throw dbError
+
+    return data.user
+  }
 
   const login = async (email: string, password: string) => {
-    // Mock login - in production, this would call an API
-    if (!email || !password) {
-      throw new Error("Email and password are required")
-    }
-
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 500))
-
-    const mockUser: User = {
-      id: Math.random().toString(36).substr(2, 9),
-      email,
-      name: email.split("@")[0],
-    }
-
-    setUser(mockUser)
-    localStorage.setItem("familytree_user", JSON.stringify(mockUser))
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) throw error
+    return data.user
   }
 
-  const register = async (email: string, password: string, name: string) => {
-    // Mock register - in production, this would call an API
-    if (!email || !password || !name) {
-      throw new Error("Email, password, and name are required")
-    }
-
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 500))
-
-    const mockUser: User = {
-      id: Math.random().toString(36).substr(2, 9),
-      email,
-      name,
-    }
-
-    setUser(mockUser)
-    localStorage.setItem("familytree_user", JSON.stringify(mockUser))
+  const logout = async () => {
+    const { error } = await supabase.auth.signOut()
+    if (error) throw error
   }
 
-  const logout = () => {
-    setUser(null)
-    localStorage.removeItem("familytree_user")
-  }
+  const value = { register, login, logout }
 
-  return <AuthContext.Provider value={{ user, loading, login, register, logout }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
-export function useAuth() {
-  const context = useContext(AuthContext)
-  if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider")
-  }
-  return context
-}
+export const useAuth = () => useContext(AuthContext)

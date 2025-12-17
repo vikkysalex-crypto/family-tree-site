@@ -2,18 +2,23 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { useAuth } from "@/providers/auth-provider"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
+import { supabase } from "@/lib/supabase/client" // <-- ensure this is your supabase client
+import { useAuth } from "@/providers/auth-provider"
 
 export default function DashboardNav() {
   const [isOpen, setIsOpen] = useState(false)
-  const { logout, user } = useAuth()
+  const { user } = useAuth() // keep user info
   const router = useRouter()
 
-  const handleLogout = () => {
-    logout()
-    router.push("/")
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut()
+    if (!error) {
+      router.push("/login") // redirect after logout
+    } else {
+      console.error("Logout error:", error.message)
+    }
   }
 
   const navItems = [

@@ -1,42 +1,56 @@
 "use client"
 
 import type React from "react"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { useAuth } from "@/providers/auth-provider"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
-import { useState, useEffect } from "react"
+import { supabase } from "@/lib/supabase/client"
 
 export default function Login() {
+  const router = useRouter()
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
-  const { login, user } = useAuth()
-  const router = useRouter()
 
+  // If user is already logged in, redirect to dashboard
   useEffect(() => {
-    if (user) {
-      router.push("/dashboard")
+    const checkSession = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession()
+
+      if (session) {
+        router.push("/dashboard")
+      }
     }
-  }, [user, router])
+
+    checkSession()
+  }, [router])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
     setIsLoading(true)
 
-    try {
-      await login(email, password)
-      router.push("/dashboard")
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Login failed")
-    } finally {
-      setIsLoading(false)
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+
+    setIsLoading(false)
+
+    if (error) {
+      setError(error.message)
+      return
     }
+
+    router.push("/dashboard")
   }
 
   return (
@@ -46,8 +60,12 @@ export default function Login() {
         <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="space-y-8">
             <div className="text-center">
-              <h1 className="text-3xl font-bold text-foreground mb-2">Welcome Back</h1>
-              <p className="text-foreground/60">Sign in to access your family tree</p>
+              <h1 className="text-3xl font-bold text-foreground mb-2">
+                Welcome Back
+              </h1>
+              <p className="text-foreground/60">
+                Sign in to access your family tree
+              </p>
             </div>
 
             {error && (
@@ -58,7 +76,10 @@ export default function Login() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
                   Email Address
                 </label>
                 <input
@@ -74,10 +95,16 @@ export default function Login() {
 
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label htmlFor="password" className="block text-sm font-medium text-foreground">
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium text-foreground"
+                  >
                     Password
                   </label>
-                  <Link href="/forgot-password" className="text-sm text-primary hover:underline">
+                  <Link
+                    href="/forgot-password"
+                    className="text-sm text-primary hover:underline"
+                  >
                     Forgot?
                   </Link>
                 </div>
@@ -105,8 +132,11 @@ export default function Login() {
 
             <div className="border-t border-border pt-6 text-center text-sm text-foreground/60">
               <p>
-                Don't have an account?{" "}
-                <Link href="/register" className="text-primary hover:underline font-medium">
+                Don&apos;t have an account?{" "}
+                <Link
+                  href="/register"
+                  className="text-primary hover:underline font-medium"
+                >
                   Create one
                 </Link>
               </p>
@@ -115,7 +145,10 @@ export default function Login() {
             <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
               <p className="text-sm text-foreground/70">
                 Forgot your password?{" "}
-                <Link href="/forgot-password" className="text-primary hover:underline">
+                <Link
+                  href="/forgot-password"
+                  className="text-primary hover:underline"
+                >
                   Reset it here
                 </Link>
               </p>

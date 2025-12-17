@@ -485,7 +485,7 @@ function ProfilePage() {
         columnNumber: 5
     }, this);
 }
-_s(ProfilePage, "dXLk4D6TplbCXsuYdUAbqvFF3iQ=", false, function() {
+_s(ProfilePage, "CE0OoEJKMSFUB1HPcl/p3ixZqb0=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$providers$2f$auth$2d$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"]
     ];

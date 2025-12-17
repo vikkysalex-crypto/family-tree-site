@@ -1,22 +1,966 @@
-[00:00:04.067] Server  LOG      ✓ Ready in 2.9s
-[00:00:18.624] Server  LOG      ○ Compiling / ...
-[00:00:25.208] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:25.833] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:25.833] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:25.833] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765923424149}
-[00:09:08.393] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:09:08.393] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:09:08.393] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765923946708}
-[00:09:18.807] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765923957095}
-[00:09:24.938] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765923963232}
-[00:09:46.490] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:46.727] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:09:46.727] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/register","route":"/register"}
-[00:09:46.727] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765923985035}
-[00:11:10.821] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765924069132}
-[00:11:59.348] Server  LOG      ✓ Compiled in 639ms
-[00:12:31.108] Server  LOG      ✓ Compiled in 252ms
-[00:13:57.360] Server  LOG      ✓ Compiled in 205ms
-[00:14:38.779] Server  LOG      ✓ Compiled in 192ms
-[00:15:32.482] Server  LOG      ✓ Compiled in 179ms
-[00:16:11.355] Server  LOG      ✓ Compiled in 358ms
+[00:00:02.937] Server  LOG      ✓ Ready in 1950ms
+[00:00:06.041] Server  LOG      ○ Compiling /dashboard ...
+[00:00:10.410] Server  ERROR    ⨯ ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:00:13.901] Browser ERROR   uncaughtError: Error: ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:00:14.237] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:00:14.982] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:37.821] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:37.821] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:40.025] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:40.025] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:40.025] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:44.256] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:44.256] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:44.256] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:44.831] Browser ERROR   ./app/dashboard/layout.tsx:4:1
+Export createServerComponentClient doesn't exist in target module
+  2 | import { redirect } from "next/navigation"
+  3 | import { cookies } from "next/headers"
+> 4 | import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | import DashboardNav from "@/components/dashboard-nav"
+  7 |
+
+The export createServerComponentClient was not found in module [project]/node_modules/@supabase/auth-helpers-nextjs/dist/module/index.js [app-rsc] (ecmascript).
+Did you mean to import createServerClient?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:58.188] Server  LOG      ✓ Compiled in 409ms
+[00:02:59.696] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:59.768] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:59.814] Server  WARN    Error: Route "/dashboard" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:02:59.948] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:59.953] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:59.962] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:03:00.028] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.030] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.032] Server  ERROR    ⨯ TypeError: cookieStore.get is not a function
+[00:03:00.043] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.048] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.050] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:03:00.052] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.053] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.062] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.get is not a function
+[00:03:00.065] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.067] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.068] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.get is not a function
+[00:03:00.178] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.248] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.328] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:03:00.344] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.346] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.348] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.get is not a function
+[00:03:00.354] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.362] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:00.399] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.get is not a function
+[00:03:01.436] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:02.816] Browser ERROR   uncaughtError: TypeError: cookieStore.get is not a function
+[00:04:02.293] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.297] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.299] Server  WARN    Error: Route "/dashboard" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:04:02.334] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.346] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.347] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:04:02.394] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.396] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.397] Server  ERROR    ⨯ TypeError: cookieStore.get is not a function
+[00:04:02.401] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.412] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.413] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:04:02.415] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.417] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.417] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.get is not a function
+[00:04:02.420] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.427] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.428] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.get is not a function
+[00:04:02.432] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.432] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.434] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:04:02.435] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.437] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.442] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.get is not a function
+[00:04:02.445] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.446] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:02.447] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.get is not a function
+[00:04:03.008] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:03.828] Browser ERROR   uncaughtError: TypeError: cookieStore.get is not a function
+[00:04:29.506] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.507] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.507] Server  WARN    Error: Route "/dashboard" used `cookies().get`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:04:29.533] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.536] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.537] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:04:29.561] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.562] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.567] Server  ERROR    ⨯ TypeError: cookieStore.get is not a function
+[00:04:29.572] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.574] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.575] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:04:29.576] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.579] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.583] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.get is not a function
+[00:04:29.585] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.586] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.587] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.get is not a function
+[00:04:29.590] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.592] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.592] Server  ERROR   TypeError: cookieStore.get is not a function
+[00:04:29.594] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.594] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.595] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.get is not a function
+[00:04:29.599] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.600] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:04:29.601] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.get is not a function
+[00:04:30.509] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:30.826] Browser ERROR   uncaughtError: TypeError: cookieStore.get is not a function
+[00:05:42.250] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.251] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.252] Server  WARN    Error: Route "/dashboard" used `cookies().getAll`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:05:42.296] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.299] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.301] Server  ERROR   TypeError: cookieStore.getAll is not a function
+[00:05:42.325] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.331] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.332] Server  ERROR    ⨯ TypeError: cookieStore.getAll is not a function
+[00:05:42.335] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.337] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.337] Server  ERROR   TypeError: cookieStore.getAll is not a function
+[00:05:42.339] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.339] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.340] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.getAll is not a function
+[00:05:42.342] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.349] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.351] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.getAll is not a function
+[00:05:42.354] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.355] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.356] Server  ERROR   TypeError: cookieStore.getAll is not a function
+[00:05:42.358] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.365] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.366] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.getAll is not a function
+[00:05:42.368] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.369] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:05:42.370] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.getAll is not a function
+[00:05:42.891] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:43.840] Browser ERROR   uncaughtError: TypeError: cookieStore.getAll is not a function
+[00:06:19.595] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.596] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.597] Server  WARN    Error: Route "/dashboard" used `cookies().getAll`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:06:19.611] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.612] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.614] Server  ERROR   TypeError: cookieStore.getAll is not a function
+[00:06:19.641] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.643] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.644] Server  ERROR    ⨯ TypeError: cookieStore.getAll is not a function
+[00:06:19.648] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.656] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.656] Server  ERROR   TypeError: cookieStore.getAll is not a function
+[00:06:19.658] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.660] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.660] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.getAll is not a function
+[00:06:19.662] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.663] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.664] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.getAll is not a function
+[00:06:19.670] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.672] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.672] Server  ERROR   TypeError: cookieStore.getAll is not a function
+[00:06:19.674] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.676] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.676] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.getAll is not a function
+[00:06:19.679] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.680] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:19.680] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.getAll is not a function
+[00:06:20.297] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:20.524] Browser ERROR   uncaughtError: TypeError: cookieStore.getAll is not a function
+[00:07:40.019] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.020] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.021] Server  WARN    Error: Route "/dashboard" used `cookies().getAll`. `cookies()` returns a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:07:40.035] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.037] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.038] Server  ERROR   TypeError: cookieStore.getAll is not a function
+[00:07:40.066] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.066] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.067] Server  ERROR    ⨯ TypeError: cookieStore.getAll is not a function
+[00:07:40.070] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.071] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.072] Server  ERROR   TypeError: cookieStore.getAll is not a function
+[00:07:40.073] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.074] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.075] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.getAll is not a function
+[00:07:40.081] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.084] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.084] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.getAll is not a function
+[00:07:40.086] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.087] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.088] Server  ERROR   TypeError: cookieStore.getAll is not a function
+[00:07:40.089] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.090] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.091] Server  ERROR    ⨯ "unhandledRejection:" TypeError: cookieStore.getAll is not a function
+[00:07:40.098] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\_90684026._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.100] Server  ERROR   C:\Users\okevi\Desktop\Developments\family-tree-site\.next\dev\server\chunks\ssr\node_modules_9f74386e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:07:40.101] Server  ERROR    ⨯ "unhandledRejection: " TypeError: cookieStore.getAll is not a function
+[00:07:40.609] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:40.926] Browser ERROR   uncaughtError: TypeError: cookieStore.getAll is not a function
+[00:10:55.265] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:56.439] Server  LOG      ✓ Compiled in 1415ms
+[00:10:56.614] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:57.145] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:57.544] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:57.544] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:10:57.544] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765950723072}
+[00:13:53.246] Server  LOG      ✓ Compiled in 445ms
+[00:13:54.006] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:54.817] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:13:54.817] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:13:54.817] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765950899810}
+[00:13:58.048] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:58.183] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:13:58.184] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:13:58.184] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765950903742}
+[00:14:03.177] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765950908723}
+[00:14:09.920] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765950915475}
+[00:14:15.407] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765950920952}
+[00:14:24.379] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765950929927}
+[00:25:16.207] Server  LOG      ✓ Compiled in 770ms
+[00:25:16.817] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  #1 [Server Component]:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  #2 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #4 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  #5 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+[00:31:11.830] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  #1 [Server Component]:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  #2 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #4 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  #5 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+[00:31:26.510] Server  ERROR    ⨯ ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import trace:
+  Server Component:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+
+[00:31:27.047] Browser ERROR   uncaughtError: Error: ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import traces:
+  #1 [Server Component]:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  #2 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #4 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  #5 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+
+
+[00:31:27.273] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  #1 [Server Component]:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  #2 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #4 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  #5 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+[00:31:27.273] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+[00:31:27.273] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Server Component:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  Client Component Browser:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+[00:31:27.273] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  #1 [Server Component]:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  #2 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #4 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  #5 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+[00:31:37.244] Server  ERROR    ⨯ ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import trace:
+  Server Component:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+
+[00:31:37.701] Browser ERROR   uncaughtError: Error: ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+
+
+Import traces:
+  #1 [Server Component]:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  #2 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #4 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  #5 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+
+
+[00:31:37.896] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  #1 [Server Component]:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  #2 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #4 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  #5 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+[00:31:37.896] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+[00:31:37.896] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Server Component:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  Client Component Browser:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+[00:31:37.896] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import trace:
+  Server Component:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+[00:31:37.896] Browser ERROR   ./providers/auth-provider.tsx:2:10
+Ecmascript file had an error
+  1 | // /providers/auth-provider.ts
+> 2 | import { createContext, useContext } from "react"
+    |          ^^^^^^^^^^^^^
+  3 | import { supabase } from "@/lib/supabase/client"
+  4 |
+  5 | export const AuthContext = createContext<any>({})
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  #1 [Server Component]:
+    ./providers/auth-provider.tsx
+    ./app/layout.tsx
+
+  #2 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Client Component SSR]
+    ./app/dashboard/page.tsx [Server Component]
+
+  #4 [Client Component Browser]:
+    ./providers/auth-provider.tsx [Client Component Browser]
+    ./components/dashboard-nav.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Client Component Browser]
+    ./app/dashboard/layout.tsx [Server Component]
+
+  #5 [Client Component SSR]:
+    ./providers/auth-provider.tsx [Client Component SSR]
+    ./components/dashboard-nav.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Client Component SSR]
+    ./app/dashboard/layout.tsx [Server Component]
+[00:33:27.001] Server  LOG      ✓ Compiled in 230ms
+[00:33:28.250] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:28.824] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:33:28.824] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:33:28.824] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765952074324}
+[00:35:19.837] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:20.023] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:35:20.023] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:35:20.023] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765952185581}
+[01:19:27.687] Server  LOG      ✓ Compiled in 354ms
+[01:19:56.991] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765954862525}
+[01:20:00.566] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765954866106}
+[01:20:05.709] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/members color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/members","o":"http://localhost:3000/dashboard/members","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765954871249}
+[01:20:10.371] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765954875903}
+[01:20:12.990] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765954878519}
+[01:21:23.279] Server  LOG      ✓ Compiled in 975ms
+[01:21:55.069] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:55.379] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:21:55.379] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree/add-member","route":"/dashboard/family-tree/add-member"}
+[01:21:55.379] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree/add-member color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree/add-member","o":"http://localhost:3000/dashboard/family-tree/add-member","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765954980917}
+[01:21:59.212] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:59.444] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:21:59.444] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:21:59.444] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765954984982}
+[01:22:02.938] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765954988480}
+[01:22:14.240] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/profile color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/profile","o":"http://localhost:3000/dashboard/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765954999780}
+[01:22:16.403] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765955001942}
+[01:26:15.571] Server  LOG      ✓ Compiled in 423ms
+[01:26:22.934] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:26:23.186] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:26:23.186] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:26:23.186] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765955248714}
+[01:29:39.482] Server  LOG      ✓ Compiled in 684ms
+[01:29:45.983] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:29:46.180] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:29:46.180] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:29:46.180] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765955451707}
+[01:30:10.501] Server  LOG      ✓ Compiled in 149ms
+[01:30:17.529] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:30:17.725] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:30:17.725] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree/add-member","route":"/dashboard/family-tree/add-member"}
+[01:30:17.725] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree/add-member color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree/add-member","o":"http://localhost:3000/dashboard/family-tree/add-member","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765955483267}
+[01:30:23.870] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:30:24.087] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:30:24.087] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:30:24.087] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765955489614}
+[01:37:52.493] Server  LOG      ✓ Compiled in 243ms
+[01:38:03.636] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:38:03.968] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:38:03.968] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:38:03.968] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765955949439}
+[01:38:03.969] Browser ERROR   uncaughtError: TypeError: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__.supabase.from(...).on is not a function
+[01:41:03.246] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:41:03.672] Server  LOG      ✓ Compiled in 340ms
+[01:41:04.482] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:41:05.324] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:41:05.324] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:41:05.324] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765956130406}
+[01:41:13.193] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:41:13.382] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:41:13.382] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:41:13.382] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765956138915}
+[01:41:15.967] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:41:16.165] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:41:16.165] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:41:16.165] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765956141702}
+[01:42:43.245] Server  LOG      ✓ Compiled in 272ms
+[01:42:54.394] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:42:54.572] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:42:54.572] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:42:54.572] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765956240111}
+[01:43:46.550] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:43:46.788] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:43:46.788] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:43:46.788] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765956292332}
+[01:44:34.590] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:44:34.758] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:44:34.758] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:44:34.758] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765956340290}
+[01:44:54.111] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:44:54.294] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:44:54.294] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:44:54.294] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765956359838}
+[01:45:12.617] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:45:12.776] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:45:12.776] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:45:12.776] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765956378320}
+[01:52:38.373] Server  LOG      ✓ Compiled in 144ms
+[01:52:45.131] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:52:45.402] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:52:45.402] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:52:45.402] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765956830934}
+[01:56:28.016] Server  LOG      ✓ Compiled in 423ms
+[01:56:33.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:56:33.858] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:56:33.858] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[01:56:33.858] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957059390}
+[01:56:44.008] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957069542}
+[01:56:47.907] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957073448}
+[01:56:58.866] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957084393}
+[01:57:01.114] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/members color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/members","o":"http://localhost:3000/dashboard/members","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957086651}
+[01:57:10.776] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957096303}
+[01:57:16.577] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/profile color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/profile","o":"http://localhost:3000/dashboard/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957102103}
+[01:57:17.410] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957102942}
+[02:00:42.507] Server  LOG      ✓ Compiled in 231ms
+[02:00:42.547] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/dashboard/family-tree/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:00:43.809] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:00:44.071] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:00:44.071] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[02:00:44.071] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957309609}
+[02:01:42.172] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957367713}
+[02:01:45.898] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957371421}
+[02:01:48.977] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/members color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/members","o":"http://localhost:3000/dashboard/members","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957374519}
+[02:01:52.515] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957378040}
+[02:09:22.099] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:09:22.372] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:09:22.372] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[02:09:22.372] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957827908}
+[02:10:15.712] Server  LOG      ✓ Compiled in 649ms
+[02:11:33.075] Server  LOG      ✓ Compiled in 181ms
+[02:11:40.369] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:11:40.600] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:11:40.600] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard/family-tree","route":"/dashboard/family-tree"}
+[02:11:40.600] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard/family-tree color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard/family-tree","o":"http://localhost:3000/dashboard/family-tree","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1765957966136}
