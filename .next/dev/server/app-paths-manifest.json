@@ -1,4 +1,6 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
   "/dashboard/family-tree/page": "app/dashboard/family-tree/page.js",
   "/dashboard/members/page": "app/dashboard/members/page.js",
   "/dashboard/page": "app/dashboard/page.js",

@@ -12,6 +12,7 @@ export default function DashboardNav() {
   const { user } = useAuth()
   const router = useRouter()
 
+  // Logout
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut()
 
@@ -23,6 +24,7 @@ export default function DashboardNav() {
     router.push("/login")
   }
 
+  // Navigation items
   const navItems = [
     { href: "/dashboard", label: "Dashboard", icon: "📊" },
     { href: "/dashboard/profile", label: "My Profile", icon: "👤" },
@@ -31,9 +33,11 @@ export default function DashboardNav() {
     { href: "/dashboard/settings", label: "Settings", icon: "⚙️" },
   ]
 
+  // Logged-in user display (100% from Supabase session)
   const displayName =
     user?.user_metadata?.full_name ||
-    user?.email?.split("@")[0] ||
+    user?.user_metadata?.name ||
+    user?.email ||
     "User"
 
   return (
@@ -41,7 +45,8 @@ export default function DashboardNav() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-primary text-primary-foreground rounded-lg shadow"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg
+                   bg-primary text-primary-foreground shadow"
         aria-label="Open menu"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,7 +59,7 @@ export default function DashboardNav() {
         className={`
           fixed lg:relative z-40 w-64 h-screen
           bg-background border-r border-border
-          transition-transform duration-300 ease-in-out
+          transform transition-transform duration-300 ease-in-out
           ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
           flex flex-col
         `}
@@ -75,7 +80,7 @@ export default function DashboardNav() {
           </button>
         </div>
 
-        {/* Navigation */}
+        {/* Navigation Links */}
         <div className="flex-1 px-4 py-6 space-y-1">
           {navItems.map((item) => (
             <Link
@@ -93,11 +98,15 @@ export default function DashboardNav() {
           ))}
         </div>
 
-        {/* User Info */}
+        {/* User Info + Logout */}
         <div className="border-t border-border px-4 py-6 space-y-4">
           <div className="rounded-lg border border-primary/20 bg-primary/10 p-3">
             <p className="text-xs text-muted-foreground">Logged in as</p>
-            <p className="text-sm font-semibold truncate">{displayName}</p>
+
+            <p className="text-sm font-semibold truncate">
+              {displayName}
+            </p>
+
             <p className="text-xs text-muted-foreground truncate">
               {user?.email}
             </p>
