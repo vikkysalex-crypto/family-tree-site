@@ -1,14 +1,171 @@
+// "use client"
+
+// import { useState } from "react"
+// import { supabase } from "@/lib/supabase/client"
+// import { useAuth } from "@/providers/auth-provider"
+// import { useRouter } from "next/navigation"
+// import { Button } from "@/components/ui/button"
+
+// export default function AddFamilyMember() {
+//   const { user } = useAuth()
+//   const router = useRouter()
+
+//   const [form, setForm] = useState({
+//     firstName: "",
+//     lastName: "",
+//     otherName: "",
+//     dob: "",
+//     relationship: "",
+//   })
+
+//   const [isLoading, setIsLoading] = useState(false)
+//   const [error, setError] = useState("")
+
+//   const handleChange = (
+//     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+//   ) => {
+//     setForm({ ...form, [e.target.name]: e.target.value })
+//   }
+
+//   const handleSubmit = async (e: React.FormEvent) => {
+//     e.preventDefault()
+//     setError("")
+
+//     if (!user?.id) {
+//       setError("Authentication error. Please refresh the page.")
+//       return
+//     }
+
+//     const { firstName, lastName, relationship, otherName, dob } = form
+
+//     if (!firstName || !lastName || !relationship) {
+//       setError("First name, last name, and relationship are required.")
+//       return
+//     }
+
+//     setIsLoading(true)
+
+//     const { error: dbError } = await supabase
+//       .from("family_members")
+//       .insert({
+//         user_id: user.id,
+//         first_name: firstName,
+//         last_name: lastName,
+//         other_name: otherName || null,
+//         dob: dob || null,
+//         relationship,
+//       })
+
+//     setIsLoading(false)
+
+//     if (dbError) {
+//       setError(dbError.message)
+//       return
+//     }
+
+//     router.push("/dashboard/family-tree")
+//   }
+
+//   return (
+//     <div className="max-w-xl mx-auto mt-14 p-8 bg-white rounded-2xl shadow-sm">
+//       <h1 className="text-2xl font-semibold mb-6 text-center">
+//         Add Family Member
+//       </h1>
+
+//       {error && (
+//         <div className="mb-4 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+//           {error}
+//         </div>
+//       )}
+
+//       <form onSubmit={handleSubmit} className="space-y-5">
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//           <input
+//             name="firstName"
+//             placeholder="First name"
+//             value={form.firstName}
+//             onChange={handleChange}
+//             className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//             required
+//           />
+
+//           <input
+//             name="lastName"
+//             placeholder="Last name"
+//             value={form.lastName}
+//             onChange={handleChange}
+//             className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//             required
+//           />
+//         </div>
+
+//         <input
+//           name="otherName"
+//           placeholder="Other name (optional)"
+//           value={form.otherName}
+//           onChange={handleChange}
+//           className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//         />
+
+//         <input
+//           type="date"
+//           name="dob"
+//           value={form.dob}
+//           onChange={handleChange}
+//           className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//         />
+
+//         <select
+//           name="relationship"
+//           value={form.relationship}
+//           onChange={handleChange}
+//           className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//           required
+//         >
+//           <option value="">Select relationship</option>
+//           <option value="father">Father</option>
+//           <option value="mother">Mother</option>
+//           <option value="grandparent">Grandparent</option>
+//           <option value="child">Child</option>
+//           <option value="sibling">Sibling</option>
+//         </select>
+
+//         <Button
+//           type="submit"
+//           className="w-full py-3 text-base"
+//           disabled={isLoading}
+//         >
+//           {isLoading ? "Saving..." : "Add Family Member"}
+//         </Button>
+//       </form>
+//     </div>
+//   )
+// }
+
+
+
+
+
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase/client"
-import { useAuth } from "@/providers/auth-provider"
-import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 
-export default function AddFamilyMember() {
-  const { user } = useAuth()
-  const router = useRouter()
+type FamilyMember = {
+  id: string
+  first_name: string
+  last_name: string
+  other_name: string | null
+  dob: string | null
+  relationship: string
+}
+
+export default function FamilyTreePage() {
+  const [userId, setUserId] = useState<string | null>(null)
+  const [members, setMembers] = useState<FamilyMember[]>([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const [form, setForm] = useState({
     firstName: "",
@@ -17,129 +174,145 @@ export default function AddFamilyMember() {
     dob: "",
     relationship: "",
   })
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState("")
-  const [loadingUser, setLoadingUser] = useState(true)
 
-  // Wait for user to load
+  /* ---------------- LOAD AUTH USER ---------------- */
   useEffect(() => {
-    if (user) setLoadingUser(false)
-  }, [user])
+    const loadUser = async () => {
+      const { data } = await supabase.auth.getSession()
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      if (data.session?.user) {
+        setUserId(data.session.user.id)
+        fetchMembers(data.session.user.id)
+      }
+    }
+
+    loadUser()
+  }, [])
+
+  /* ---------------- FETCH FAMILY MEMBERS ---------------- */
+  const fetchMembers = async (uid: string) => {
+    const { data, error } = await supabase
+      .from("family_members")
+      .select("*")
+      .eq("user_id", uid)
+      .order("created_at", { ascending: false })
+
+    if (!error && data) {
+      setMembers(data)
+    }
+  }
+
+  /* ---------------- HANDLE FORM INPUT ---------------- */
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
+  /* ---------------- SUBMIT ---------------- */
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
 
-    if (!user) {
-      setError("Loading user info, please wait...")
+    if (!userId) {
+      setError("Please wait, loading user...")
       return
     }
 
     const { firstName, lastName, relationship, otherName, dob } = form
 
     if (!firstName || !lastName || !relationship) {
-      setError("Please fill in First Name, Last Name, and Relationship.")
+      setError("First name, last name, and relationship are required.")
       return
     }
 
-    setIsLoading(true)
+    setLoading(true)
 
-    const { error: dbError } = await supabase.from("family_members").insert([
-      {
-        user_id: user.id, // ✅ guaranteed to exist now
-        first_name: firstName,
-        last_name: lastName,
-        other_name: otherName || null,
-        dob: dob || null,
-        relationship,
-      },
-    ])
+    const { error } = await supabase.from("family_members").insert({
+      user_id: userId,
+      first_name: firstName,
+      last_name: lastName,
+      other_name: otherName || null,
+      dob: dob || null,
+      relationship,
+    })
 
-    setIsLoading(false)
+    setLoading(false)
 
-    if (dbError) {
-      setError(dbError.message)
+    if (error) {
+      setError(error.message)
       return
     }
 
-    router.push("/dashboard/family-tree")
+    // Reset form
+    setForm({
+      firstName: "",
+      lastName: "",
+      otherName: "",
+      dob: "",
+      relationship: "",
+    })
+
+    // Refresh list
+    fetchMembers(userId)
   }
 
-  if (loadingUser) return <p className="p-6">Loading user information...</p>
-
   return (
-    <div className="max-w-lg mx-auto p-8 bg-white rounded-xl shadow mt-12">
-      <h1 className="text-2xl font-bold text-center mb-6">Add Family Member</h1>
+    <div className="max-w-5xl mx-auto mt-14 px-4">
+      {/* ================= ADD FORM ================= */}
+      <div className="bg-white p-8 rounded-2xl shadow-sm mb-10">
+        <h1 className="text-2xl font-semibold mb-6 text-center">
+          Add Family Member
+        </h1>
 
-      {error && (
-        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded mb-4">
-          {error}
-        </div>
-      )}
+        {error && (
+          <div className="mb-4 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+            {error}
+          </div>
+        )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1">First Name</label>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               name="firstName"
+              placeholder="First name"
               value={form.firstName}
               onChange={handleChange}
-              type="text"
-              placeholder="John"
-              className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+              className="w-full rounded-lg border px-4 py-3"
               required
             />
-          </div>
 
-          <div>
-            <label className="block text-sm font-medium mb-1">Last Name</label>
             <input
               name="lastName"
+              placeholder="Last name"
               value={form.lastName}
               onChange={handleChange}
-              type="text"
-              placeholder="Doe"
-              className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+              className="w-full rounded-lg border px-4 py-3"
               required
             />
           </div>
-        </div>
 
-        <div>
-          <label className="block text-sm font-medium mb-1">Other Name</label>
           <input
             name="otherName"
+            placeholder="Other name (optional)"
             value={form.otherName}
             onChange={handleChange}
-            type="text"
-            placeholder="Optional"
-            className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+            className="w-full rounded-lg border px-4 py-3"
           />
-        </div>
 
-        <div>
-          <label className="block text-sm font-medium mb-1">Date of Birth</label>
           <input
+            type="date"
             name="dob"
             value={form.dob}
             onChange={handleChange}
-            type="date"
-            className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+            className="w-full rounded-lg border px-4 py-3"
           />
-        </div>
 
-        <div>
-          <label className="block text-sm font-medium mb-1">Relationship</label>
           <select
             name="relationship"
             value={form.relationship}
             onChange={handleChange}
-            className="w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+            className="w-full rounded-lg border px-4 py-3"
             required
           >
             <option value="">Select relationship</option>
@@ -149,12 +322,58 @@ export default function AddFamilyMember() {
             <option value="child">Child</option>
             <option value="sibling">Sibling</option>
           </select>
-        </div>
 
-        <Button type="submit" className="w-full mt-2" disabled={isLoading}>
-          {isLoading ? "Adding..." : "Add Member"}
-        </Button>
-      </form>
+          <Button
+            type="submit"
+            className="w-full py-3"
+            disabled={loading || !userId}
+          >
+            {!userId
+              ? "Loading user..."
+              : loading
+              ? "Saving..."
+              : "Add Family Member"}
+          </Button>
+        </form>
+      </div>
+
+      {/* ================= DISPLAY MEMBERS ================= */}
+      <div>
+        <h2 className="text-xl font-semibold mb-4">
+          Your Family Members
+        </h2>
+
+        {members.length === 0 && (
+          <p className="text-gray-500">
+            No family members added yet.
+          </p>
+        )}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {members.map((member) => (
+            <div
+              key={member.id}
+              className="rounded-xl border bg-white p-5 shadow-sm"
+            >
+              <h3 className="font-semibold text-lg">
+                {member.first_name}{" "}
+                {member.other_name && member.other_name + " "}
+                {member.last_name}
+              </h3>
+
+              <p className="text-sm text-gray-600 capitalize">
+                {member.relationship}
+              </p>
+
+              {member.dob && (
+                <p className="text-sm text-gray-500 mt-1">
+                  DOB: {member.dob}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

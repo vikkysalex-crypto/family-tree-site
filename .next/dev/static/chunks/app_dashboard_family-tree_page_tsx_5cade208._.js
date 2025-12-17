@@ -2,15 +2,134 @@
 "[project]/app/dashboard/family-tree/page.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// "use client"
+// import { useState } from "react"
+// import { supabase } from "@/lib/supabase/client"
+// import { useAuth } from "@/providers/auth-provider"
+// import { useRouter } from "next/navigation"
+// import { Button } from "@/components/ui/button"
+// export default function AddFamilyMember() {
+//   const { user } = useAuth()
+//   const router = useRouter()
+//   const [form, setForm] = useState({
+//     firstName: "",
+//     lastName: "",
+//     otherName: "",
+//     dob: "",
+//     relationship: "",
+//   })
+//   const [isLoading, setIsLoading] = useState(false)
+//   const [error, setError] = useState("")
+//   const handleChange = (
+//     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+//   ) => {
+//     setForm({ ...form, [e.target.name]: e.target.value })
+//   }
+//   const handleSubmit = async (e: React.FormEvent) => {
+//     e.preventDefault()
+//     setError("")
+//     if (!user?.id) {
+//       setError("Authentication error. Please refresh the page.")
+//       return
+//     }
+//     const { firstName, lastName, relationship, otherName, dob } = form
+//     if (!firstName || !lastName || !relationship) {
+//       setError("First name, last name, and relationship are required.")
+//       return
+//     }
+//     setIsLoading(true)
+//     const { error: dbError } = await supabase
+//       .from("family_members")
+//       .insert({
+//         user_id: user.id,
+//         first_name: firstName,
+//         last_name: lastName,
+//         other_name: otherName || null,
+//         dob: dob || null,
+//         relationship,
+//       })
+//     setIsLoading(false)
+//     if (dbError) {
+//       setError(dbError.message)
+//       return
+//     }
+//     router.push("/dashboard/family-tree")
+//   }
+//   return (
+//     <div className="max-w-xl mx-auto mt-14 p-8 bg-white rounded-2xl shadow-sm">
+//       <h1 className="text-2xl font-semibold mb-6 text-center">
+//         Add Family Member
+//       </h1>
+//       {error && (
+//         <div className="mb-4 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+//           {error}
+//         </div>
+//       )}
+//       <form onSubmit={handleSubmit} className="space-y-5">
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//           <input
+//             name="firstName"
+//             placeholder="First name"
+//             value={form.firstName}
+//             onChange={handleChange}
+//             className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//             required
+//           />
+//           <input
+//             name="lastName"
+//             placeholder="Last name"
+//             value={form.lastName}
+//             onChange={handleChange}
+//             className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//             required
+//           />
+//         </div>
+//         <input
+//           name="otherName"
+//           placeholder="Other name (optional)"
+//           value={form.otherName}
+//           onChange={handleChange}
+//           className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//         />
+//         <input
+//           type="date"
+//           name="dob"
+//           value={form.dob}
+//           onChange={handleChange}
+//           className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//         />
+//         <select
+//           name="relationship"
+//           value={form.relationship}
+//           onChange={handleChange}
+//           className="w-full rounded-lg border px-4 py-3 focus:ring-2 focus:ring-primary"
+//           required
+//         >
+//           <option value="">Select relationship</option>
+//           <option value="father">Father</option>
+//           <option value="mother">Mother</option>
+//           <option value="grandparent">Grandparent</option>
+//           <option value="child">Child</option>
+//           <option value="sibling">Sibling</option>
+//         </select>
+//         <Button
+//           type="submit"
+//           className="w-full py-3 text-base"
+//           disabled={isLoading}
+//         >
+//           {isLoading ? "Saving..." : "Add Family Member"}
+//         </Button>
+//       </form>
+//     </div>
+//   )
+// }
 __turbopack_context__.s([
     "default",
-    ()=>AddFamilyMember
+    ()=>FamilyTreePage
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/supabase/client.ts [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$providers$2f$auth$2d$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/providers/auth-provider.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/button.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
@@ -18,12 +137,12 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-;
-;
-function AddFamilyMember() {
+function FamilyTreePage() {
     _s();
-    const { user } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$providers$2f$auth$2d$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"])();
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    const [userId, setUserId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [members, setMembers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         firstName: "",
         lastName: "",
@@ -31,221 +150,157 @@ function AddFamilyMember() {
         dob: "",
         relationship: ""
     });
-    const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
-    const [loadingUser, setLoadingUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
-    // Wait for user to load
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "AddFamilyMember.useEffect": ()=>{
-            if (user) setLoadingUser(false);
+    /* ---------------- LOAD AUTH USER ---------------- */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "FamilyTreePage.useEffect": ()=>{
+            const loadUser = {
+                "FamilyTreePage.useEffect.loadUser": async ()=>{
+                    const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].auth.getSession();
+                    if (data.session?.user) {
+                        setUserId(data.session.user.id);
+                        fetchMembers(data.session.user.id);
+                    }
+                }
+            }["FamilyTreePage.useEffect.loadUser"];
+            loadUser();
         }
-    }["AddFamilyMember.useEffect"], [
-        user
-    ]);
-    const handleChange = (e)=>{
+    }["FamilyTreePage.useEffect"], []);
+    /* ---------------- FETCH FAMILY MEMBERS ---------------- */ const fetchMembers = async (uid)=>{
+        const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("family_members").select("*").eq("user_id", uid).order("created_at", {
+            ascending: false
+        });
+        if (!error && data) {
+            setMembers(data);
+        }
+    };
+    /* ---------------- HANDLE FORM INPUT ---------------- */ const handleChange = (e)=>{
         setForm({
             ...form,
             [e.target.name]: e.target.value
         });
     };
-    const handleSubmit = async (e)=>{
+    /* ---------------- SUBMIT ---------------- */ const handleSubmit = async (e)=>{
         e.preventDefault();
         setError("");
-        if (!user) {
-            setError("Loading user info, please wait...");
+        if (!userId) {
+            setError("Please wait, loading user...");
             return;
         }
         const { firstName, lastName, relationship, otherName, dob } = form;
         if (!firstName || !lastName || !relationship) {
-            setError("Please fill in First Name, Last Name, and Relationship.");
+            setError("First name, last name, and relationship are required.");
             return;
         }
-        setIsLoading(true);
-        const { error: dbError } = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("family_members").insert([
-            {
-                user_id: user.id,
-                first_name: firstName,
-                last_name: lastName,
-                other_name: otherName || null,
-                dob: dob || null,
-                relationship
-            }
-        ]);
-        setIsLoading(false);
-        if (dbError) {
-            setError(dbError.message);
+        setLoading(true);
+        const { error } = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$supabase$2f$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("family_members").insert({
+            user_id: userId,
+            first_name: firstName,
+            last_name: lastName,
+            other_name: otherName || null,
+            dob: dob || null,
+            relationship
+        });
+        setLoading(false);
+        if (error) {
+            setError(error.message);
             return;
         }
-        router.push("/dashboard/family-tree");
+        // Reset form
+        setForm({
+            firstName: "",
+            lastName: "",
+            otherName: "",
+            dob: "",
+            relationship: ""
+        });
+        // Refresh list
+        fetchMembers(userId);
     };
-    if (loadingUser) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-        className: "p-6",
-        children: "Loading user information..."
-    }, void 0, false, {
-        fileName: "[project]/app/dashboard/family-tree/page.tsx",
-        lineNumber: 72,
-        columnNumber: 27
-    }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "max-w-lg mx-auto p-8 bg-white rounded-xl shadow mt-12",
+        className: "max-w-5xl mx-auto mt-14 px-4",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-2xl font-bold text-center mb-6",
-                children: "Add Family Member"
-            }, void 0, false, {
-                fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                lineNumber: 76,
-                columnNumber: 7
-            }, this),
-            error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded mb-4",
-                children: error
-            }, void 0, false, {
-                fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                lineNumber: 79,
-                columnNumber: 9
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                onSubmit: handleSubmit,
-                className: "space-y-4",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "bg-white p-8 rounded-2xl shadow-sm mb-10",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid grid-cols-1 md:grid-cols-2 gap-4",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "text-2xl font-semibold mb-6 text-center",
+                        children: "Add Family Member"
+                    }, void 0, false, {
+                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                        lineNumber: 264,
+                        columnNumber: 9
+                    }, this),
+                    error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-4 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700",
+                        children: error
+                    }, void 0, false, {
+                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                        lineNumber: 269,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                        onSubmit: handleSubmit,
+                        className: "space-y-5",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "grid grid-cols-1 md:grid-cols-2 gap-4",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: "block text-sm font-medium mb-1",
-                                        children: "First Name"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 87,
-                                        columnNumber: 13
-                                    }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                         name: "firstName",
+                                        placeholder: "First name",
                                         value: form.firstName,
                                         onChange: handleChange,
-                                        type: "text",
-                                        placeholder: "John",
-                                        className: "w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary",
+                                        className: "w-full rounded-lg border px-4 py-3",
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 88,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                lineNumber: 86,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: "block text-sm font-medium mb-1",
-                                        children: "Last Name"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 276,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                         name: "lastName",
+                                        placeholder: "Last name",
                                         value: form.lastName,
                                         onChange: handleChange,
-                                        type: "text",
-                                        placeholder: "Doe",
-                                        className: "w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary",
+                                        className: "w-full rounded-lg border px-4 py-3",
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 101,
+                                        lineNumber: 285,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                lineNumber: 99,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                        lineNumber: 85,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                className: "block text-sm font-medium mb-1",
-                                children: "Other Name"
-                            }, void 0, false, {
-                                fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                lineNumber: 114,
+                                lineNumber: 275,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 name: "otherName",
+                                placeholder: "Other name (optional)",
                                 value: form.otherName,
                                 onChange: handleChange,
-                                type: "text",
-                                placeholder: "Optional",
-                                className: "w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+                                className: "w-full rounded-lg border px-4 py-3"
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                lineNumber: 115,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                        lineNumber: 113,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                className: "block text-sm font-medium mb-1",
-                                children: "Date of Birth"
-                            }, void 0, false, {
-                                fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                lineNumber: 126,
+                                lineNumber: 295,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                type: "date",
                                 name: "dob",
                                 value: form.dob,
                                 onChange: handleChange,
-                                type: "date",
-                                className: "w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary"
+                                className: "w-full rounded-lg border px-4 py-3"
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                lineNumber: 127,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                        lineNumber: 125,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                className: "block text-sm font-medium mb-1",
-                                children: "Relationship"
-                            }, void 0, false, {
-                                fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                lineNumber: 137,
+                                lineNumber: 303,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                 name: "relationship",
                                 value: form.relationship,
                                 onChange: handleChange,
-                                className: "w-full border px-3 py-2 rounded focus:ring-2 focus:ring-primary",
+                                className: "w-full rounded-lg border px-4 py-3",
                                 required: true,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -253,7 +308,7 @@ function AddFamilyMember() {
                                         children: "Select relationship"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 145,
+                                        lineNumber: 318,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -261,7 +316,7 @@ function AddFamilyMember() {
                                         children: "Father"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 146,
+                                        lineNumber: 319,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -269,7 +324,7 @@ function AddFamilyMember() {
                                         children: "Mother"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 320,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -277,7 +332,7 @@ function AddFamilyMember() {
                                         children: "Grandparent"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 148,
+                                        lineNumber: 321,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -285,7 +340,7 @@ function AddFamilyMember() {
                                         children: "Child"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 322,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -293,53 +348,120 @@ function AddFamilyMember() {
                                         children: "Sibling"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 323,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                                lineNumber: 138,
+                                lineNumber: 311,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                type: "submit",
+                                className: "w-full py-3",
+                                disabled: loading || !userId,
+                                children: !userId ? "Loading user..." : loading ? "Saving..." : "Add Family Member"
+                            }, void 0, false, {
+                                fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                                lineNumber: 326,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                        lineNumber: 136,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                        type: "submit",
-                        className: "w-full mt-2",
-                        disabled: isLoading,
-                        children: isLoading ? "Adding..." : "Add Member"
-                    }, void 0, false, {
-                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                        lineNumber: 154,
+                        lineNumber: 274,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/dashboard/family-tree/page.tsx",
-                lineNumber: 84,
+                lineNumber: 263,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                        className: "text-xl font-semibold mb-4",
+                        children: "Your Family Members"
+                    }, void 0, false, {
+                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                        lineNumber: 342,
+                        columnNumber: 9
+                    }, this),
+                    members.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-gray-500",
+                        children: "No family members added yet."
+                    }, void 0, false, {
+                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                        lineNumber: 347,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "grid grid-cols-1 md:grid-cols-2 gap-4",
+                        children: members.map((member)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "rounded-xl border bg-white p-5 shadow-sm",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "font-semibold text-lg",
+                                        children: [
+                                            member.first_name,
+                                            " ",
+                                            member.other_name && member.other_name + " ",
+                                            member.last_name
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                                        lineNumber: 358,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-sm text-gray-600 capitalize",
+                                        children: member.relationship
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                                        lineNumber: 364,
+                                        columnNumber: 15
+                                    }, this),
+                                    member.dob && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-sm text-gray-500 mt-1",
+                                        children: [
+                                            "DOB: ",
+                                            member.dob
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                                        lineNumber: 369,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, member.id, true, {
+                                fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                                lineNumber: 354,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                        lineNumber: 352,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/dashboard/family-tree/page.tsx",
+                lineNumber: 341,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/dashboard/family-tree/page.tsx",
-        lineNumber: 75,
+        lineNumber: 261,
         columnNumber: 5
     }, this);
 }
-_s(AddFamilyMember, "hPVvAtvwAWeqp8fmxRbdqGMPKNE=", false, function() {
-    return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$providers$2f$auth$2d$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
-    ];
-});
-_c = AddFamilyMember;
+_s(FamilyTreePage, "+T7a392EV+/NY/1ZQ9aT/yYH+4g=");
+_c = FamilyTreePage;
 var _c;
-__turbopack_context__.k.register(_c, "AddFamilyMember");
+__turbopack_context__.k.register(_c, "FamilyTreePage");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

@@ -1,9 +1,10 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/dashboard/family-tree/page": "app/dashboard/family-tree/page.js",
   "/dashboard/members/page": "app/dashboard/members/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/profile/page": "app/dashboard/profile/page.js",
+  "/dashboard/settings/page": "app/dashboard/settings/page.js",
   "/login/page": "app/login/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/register/page": "app/register/page.js"
 }
